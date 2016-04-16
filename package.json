@@ -1,0 +1,22 @@
+{
+  "name": "POSTagger-messenger-bot",
+  "version": "0.0.1",
+  "description": "Facebook messenger bot for parts of speech tagging.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinranxiao/POSTagger-messenger-bot.git"
+  },
+  "author": "Xinran Xiao <xinranxiao@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "babel": "^5.8.21",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "lodash": "^4.10.0",
+    "morgan": "^1.7.0",
+    "request": "^2.71.0"
+  }
+}
