@@ -1,11 +1,10 @@
 import { _ } from 'lodash';
 import { Router } from 'express';
-
+import { sendTextMessage } from '../lib/messaging'
 import secrets from '../../secrets.json'
 
 export default () => {
   const router = Router();
-  const accessToken = secrets.accessToken;
   const verifyToken = secrets.verifyToken;
 
   router.get('/webhook', (req, res) => {
@@ -34,10 +33,12 @@ export default () => {
 
         const contents = message.message;
         if (contents && contents.text) {
-          console.log(contents.text);
+          sendTextMessage(senderId, contents.text);
         }
       });
     });
+
+    res.sendStatus(200);
   });
 
   return router;

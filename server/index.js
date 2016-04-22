@@ -5,7 +5,12 @@ import morgan from 'morgan';
 
 import routes from './routes';
 
-// Create our express app & attach an http server to it.
+/**
+ * Create the express app and attach an http server to it. Note that facebook
+ * requires the webhook endpoint to be SSL-enabled. In this tutorial we use
+ * Cloudflare to implement SSL, but if you have your own certificate feel feel
+ * to replace the `http` package with the `https` package and use that here.
+ */
 const app = express();
 app.server = http.createServer(app);
 
